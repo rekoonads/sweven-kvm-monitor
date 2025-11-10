@@ -21,7 +21,7 @@ def create_influxdb_point(measurement, data):
         if key == 'host':
             # hotfix for dot in hostname
             point = point.tag(key, value.split('.')[0])
-        if key == 'vm_name':
+        elif key == 'vm_name':
             point = point.tag(key, value)
         else:
             point = point.field(key, value)
