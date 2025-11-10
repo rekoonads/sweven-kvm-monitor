@@ -8,7 +8,7 @@ if not os.path.exists('./logs'):
 
 # Configure logging
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.INFO,  # Changed from DEBUG to INFO to reduce log noise
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
     handlers=[
         logging.FileHandler("./logs/system_monitor.log"),

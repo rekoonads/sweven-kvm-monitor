@@ -35,7 +35,7 @@ def get_disk_stats(disk_path):
 def get_smartctl_data(disk_path):
 
     if disk_path is None:
-        logger.debug("DISK_PATH environment variable is not set.")
+        # Silently return None if DISK_PATH is not set (expected when STORAGE_SERVER is used)
         return None
 
     smart_data = get_disk_stats(disk_path)
