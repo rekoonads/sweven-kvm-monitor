@@ -1,0 +1,14 @@
+[Unit]
+Description=Libvirt Monitoring Service
+After=network.target
+
+[Service]
+ExecStart=/root/kvm-monitor/env/bin/python3 /root/kvm-monitor/main.py
+WorkingDirectory=/root/kvm-monitor
+Restart=always
+RestartSec=5
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
